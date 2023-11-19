@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family ;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(227, 24, 166);
+  }
+  
+  .logo {
+    font-size: 1.5em;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(107, 20, 148);
+  }
+  
+  /* Styles pour le bouton hamburger */
+  #toggle-menu {
+    display: none;
+  }
+  
+  label[for="toggle-menu"] {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* Media query pour les résolutions inférieures ou égales à 767px */
+  @media screen and (max-width: 767px) {
+    label[for="toggle-menu"] {
+      display: block;
+    }
+  
+    .nav-links ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 1;
+    }
+  
+    #toggle-menu:checked + .nav-links ul {
+      display: flex;
+    }
+  }
+  
+  /* Media query pour les résolutions supérieures ou égales à 1600px */
+  @media screen and (min-width: 1600px) {
+    .nav-links {
+      display: flex;
+    }
+  
+    .nav-links ul {
+      flex-basis: calc(30% - 20px); /* Ajustez la largeur des sections selon vos besoins */
+    }
+  }
+  
+  /* Media query pour les résolutions entre 768px et 1599px */
+  @media screen and (min-width: 768px) and (max-width: 1599px) {
+    .nav-links ul {
+      flex-basis: calc(48% - 20px); /* Deux sections empilées par ligne */
+    }
+  }
+  
